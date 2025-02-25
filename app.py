@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.logger import activity_logger, warning_logger, error_logger
+from logger import activity_logger, warning_logger, error_logger
 
 st.title("Sistema de Logging en Streamlit")
 
