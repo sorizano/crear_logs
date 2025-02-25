@@ -1,17 +1,13 @@
 import logging
-import os
+import streamlit as st
 
 @st.cache_resource
-def setup_logger(name, log_file, level=logging.INFO):
-    log_dir = os.path.dirname(log_file)
-    print(f"Intentando escribie logs es: {os.path.abspath(log_file)}")
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
-
+def setup_logger(name, level=logging.INFO):
     logger = logging.getLogger(name)
     logger.setLevel(level)
 
     if not logger.handlers:
-        handler = logging.FileHandler(log_file)
+        handler = logging.StreamHandler()
         handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         logger.addHandler(handler)
 
