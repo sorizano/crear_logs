@@ -12,8 +12,8 @@ if st.button("Generar Log"):
         activity_logger.info(f"Usuario Ingreso: {data_input}")
         st.success("Log de actividad Generado")
     elif type_of_log == "Advertencia":
-        activity_logger.warning(f"Posible problema con el dato: {data_input}")
+        warning_logger.warning(f"Posible problema con el dato: {data_input}")
         st.warning("Log de advertencia Generado")
     elif type_of_log == "Error":
-        activity_logger.error(f"Error detectado con el dato: {data_input}")
+        error_logger.error(f"Error detectado con el dato: {data_input}")
         st.error("Log de error generado")
