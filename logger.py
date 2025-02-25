@@ -1,8 +1,12 @@
 import logging
 import os
 
+@st.cache_resource
 def setup_logger(name, log_file, level=logging.INFO):
+    log_dir = os.path.dirname(log_file)
+    print(f"Intentando escribie logs es: {os.path.abspath(log_file)}")
     os.makedirs(os.path.dirname(log_file), exist_ok=True)
+
     logger = logging.getLogger(name)
     logger.setLevel(level)
 
